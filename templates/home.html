@@ -4,13 +4,23 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
     </head>
     <body>
+
+        <br/>
+
+        <form class="container" action="create", methods='POST'>
+            <input name='name' class='form-control'/>
+            <button class="btn btn-primary">Salvar</button>
+        </form>
+
         <table class="table table-hover">
+
+            {% for task in tasks: %}
             <tr>
-                <td> linha 1, Coluna 1</td>
-                <td> linha 1, Coluna 2</td>
+                <td> {{task[ 'name']}}</td>
+                <td> {{task['finished']}}</td>
             </tr>
-                <td> linha 2, Coluna 1</td>
-                <td> linha 2, Coluna 1</td>
+            {% endfor %}
+
         </table>
     </body>
 </html>
