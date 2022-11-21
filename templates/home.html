@@ -7,7 +7,7 @@
 
         <br/>
 
-        <form class="container" action="create", methods='POST'>
+        <form class="container" action="create" method='POST'>
             <input name='name' class='form-control'/>
             <button class="btn btn-primary">Salvar</button>
         </form>
@@ -16,7 +16,7 @@
 
             {% for task in tasks: %}
             <tr>
-                <td> {{task[ 'name']}}</td>
+                <td> {{task['name']}}</td>
                 <td> {{task['finished']}}</td>
             </tr>
             {% endfor %}
