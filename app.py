@@ -19,4 +19,12 @@ def create():
     task = {'name' : name, 'finished': False}
     tasks.append(task)
     return render_template('home.html', tasks=tasks)
+    
+@app.route('/create', methods=['POST'])
+def deletar(name):
+    try:
+        deletarMusica(name)
+        return render_template('home.html', tasks=tasks)
+    except:
+        return "Algo deu errado"
 app.run(debug=True)
